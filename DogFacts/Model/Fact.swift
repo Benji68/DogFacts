@@ -7,6 +7,8 @@
 
 import Foundation
 
-struct Fact: Codable {
-    var fact: String
+class Fact: Codable {
+    var fact: String = ""
+    var isSaved: Bool? = false
+    
 }

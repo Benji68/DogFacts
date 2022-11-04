@@ -3,7 +3,6 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,32 +28,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7x-Ko-wqf">
-                                                    <rect key="frame" x="20" y="11" width="311" height="99"/>
+                                                    <rect key="frame" x="20" y="11" width="310" height="99"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eci-9r-MLo">
-                                                    <rect key="frame" x="320" y="11" width="50" height="99"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="Nzx-s4-pls"/>
-                                                    </constraints>
-                                                    <imageReference key="image" image="bookmark" catalog="system" symbolScale="default" renderingMode="original"/>
-                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAe-9d-h6L">
+                                                    <rect key="frame" x="327" y="16" width="63" height="88"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="bookmark" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="bookmarkButtonClickedWithSender:" destination="5A5-bV-q5Z" eventType="touchUpInside" id="Ib9-1Q-moq"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="eci-9r-MLo" firstAttribute="top" secondItem="WMI-NZ-UD0" secondAttribute="top" id="Vpo-bg-iac"/>
-                                                <constraint firstAttribute="trailing" secondItem="eci-9r-MLo" secondAttribute="trailing" constant="20" symbolic="YES" id="dM4-ag-XEc"/>
+                                                <constraint firstItem="GAe-9d-h6L" firstAttribute="leading" secondItem="I7x-Ko-wqf" secondAttribute="trailing" constant="-3" id="0Bu-Uj-Q65"/>
+                                                <constraint firstItem="GAe-9d-h6L" firstAttribute="width" secondItem="WMI-NZ-UD0" secondAttribute="width" multiplier="0.161538" id="SDJ-pq-UQf"/>
+                                                <constraint firstItem="GAe-9d-h6L" firstAttribute="centerY" secondItem="I7x-Ko-wqf" secondAttribute="centerY" id="cPj-io-Mgv"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="I7x-Ko-wqf" secondAttribute="bottom" id="hWY-5B-ag1"/>
                                                 <constraint firstItem="I7x-Ko-wqf" firstAttribute="leading" secondItem="WMI-NZ-UD0" secondAttribute="leadingMargin" id="iWo-5K-K6H"/>
-                                                <constraint firstItem="eci-9r-MLo" firstAttribute="leading" secondItem="I7x-Ko-wqf" secondAttribute="trailing" id="nFK-8J-fAo"/>
-                                                <constraint firstItem="eci-9r-MLo" firstAttribute="width" secondItem="WMI-NZ-UD0" secondAttribute="width" multiplier="0.1" id="vMS-rO-xTe"/>
+                                                <constraint firstAttribute="trailing" secondItem="GAe-9d-h6L" secondAttribute="trailing" id="p9R-ab-jkL"/>
                                                 <constraint firstItem="I7x-Ko-wqf" firstAttribute="top" secondItem="WMI-NZ-UD0" secondAttribute="topMargin" id="z66-qa-8AY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bookmarkButton" destination="GAe-9d-h6L" id="3Hd-uz-RFy"/>
                                             <outlet property="factLabel" destination="I7x-Ko-wqf" id="AyC-a6-Knh"/>
-                                            <outlet property="factSaveImage" destination="eci-9r-MLo" id="NjB-IT-fGa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -102,7 +102,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="56d-aR-r87">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="56d-aR-r87">
                                 <rect key="frame" x="147" y="300" width="92" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="tel"/>

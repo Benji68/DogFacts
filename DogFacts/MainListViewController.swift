@@ -48,7 +48,7 @@ class MainListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: factCellIdentifier) as! FactTableViewCell
-        cell.factLabel.text = factModel[indexPath.row].fact
+        cell.cellModel = factModel[indexPath.row]
         return cell
     }
 }
